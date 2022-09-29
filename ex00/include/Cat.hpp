@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 12:44:13 by jrinna            #+#    #+#             */
-/*   Updated: 2022/09/28 15:03:00 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/09/29 09:03:00 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Cat : public Animal
 
 		Cat();
 		Cat( Cat const & src );
-		virtual ~Cat();
+		~Cat();
 
 		Cat &		operator=( Cat const & rhs );
 		void	makeSound( void ) const;

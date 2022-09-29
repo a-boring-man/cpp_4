@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 13:09:18 by jrinna            #+#    #+#             */
-/*   Updated: 2022/09/28 15:03:08 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/09/29 09:03:55 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Dog : public Animal
 
 		Dog();
 		Dog( Dog const & src );
-		virtual ~Dog();
+		~Dog();
 
 		Dog &		operator=( Dog const & rhs );
 		void	makeSound( void ) const;

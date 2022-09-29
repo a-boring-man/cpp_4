@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 14:25:13 by jrinna            #+#    #+#             */
-/*   Updated: 2022/09/28 15:07:59 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/09/29 08:46:25 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class WrongAnimal
 
 		string	getType( void ) const;
 
-	private:
+	protected:
 
 		string	_type;
 };

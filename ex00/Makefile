@@ -6,12 +6,12 @@
 #    By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/28 10:53:54 by jrinna            #+#    #+#              #
-#    Updated: 2022/09/28 13:30:34 by jrinna           ###   ########lyon.fr    #
+#    Updated: 2022/09/29 08:40:23 by jrinna           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-LST_SRC := Animal.cpp Cat.cpp Dog.cpp main.cpp
-LST_INC := Animal.hpp Cat.hpp Dog.hpp
+LST_SRC := Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp main.cpp
+LST_INC := Animal.hpp Cat.hpp Dog.hpp WrongAnimal.hpp WrongCat.hpp
 LST_OBJ := ${LST_SRC:.cpp=.o}
 
 DIR_SRC := source
