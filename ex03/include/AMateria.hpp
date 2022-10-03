@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 11:58:07 by jrinna            #+#    #+#             */
-/*   Updated: 2022/10/03 15:28:23 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/10/03 15:40:44 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ class AMateria
 		string	const &		getType( void ) const;
 
 		virtual AMateria*	clone() const = 0;
-		//virtual void		use(ICharacter & target);
+		virtual void		use( const string target ); // data type modifier car incoplet;
 
 	protected:
 

@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 14:30:52 by jrinna            #+#    #+#             */
-/*   Updated: 2022/10/03 15:23:15 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/10/03 15:45:21 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,11 @@ AMateria*	Ice::clone( void ) const {
 
 	AMateria*	clone = new Ice(*this);
 	return(clone);
+}
+
+void	Ice::use( const string target ) {
+
+	cout << "Ice: \"* shoot an ice bolt at " << target << " *\"" << endl;
 }
 
 /*

@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 14:30:54 by jrinna            #+#    #+#             */
-/*   Updated: 2022/10/03 15:23:03 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/10/03 15:44:31 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class Ice : public AMateria
 
 		AMateria*	clone( void ) const;
 
-		void	setMalloc( bool i );
+		virtual void		use( const string target ); // data type modifier car incoplet;
 
 	private:
 

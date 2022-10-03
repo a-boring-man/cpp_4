@@ -72,6 +72,11 @@ AMateria*	Cure::clone( void ) const {
 	return(clone);
 }
 
+void	Cure::use( const string target ) {
+
+	cout << "Cure: \"* heals " << target << "'s wounds *\"" << endl;
+}
+
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */

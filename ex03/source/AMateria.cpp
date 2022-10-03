@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 11:58:25 by jrinna            #+#    #+#             */
-/*   Updated: 2022/10/03 14:43:51 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/10/03 15:43:17 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,10 @@ std::ostream &			operator<<( std::ostream & o, AMateria const & A )
 ** --------------------------------- METHODS ----------------------------------
 */
 
+void	AMateria::use( const string target ) {
+
+	cout << "Unknown: \"* use dark magic on " << target << " *\"" << endl;
+}
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------

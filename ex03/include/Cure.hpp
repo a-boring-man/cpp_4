@@ -29,7 +29,7 @@ class Cure : public AMateria
 
 		AMateria*	clone( void ) const;
 
-		void	setMalloc( bool i );
+		virtual void		use( const string target ); // data type modifier car incoplet;
 
 	private:
 
