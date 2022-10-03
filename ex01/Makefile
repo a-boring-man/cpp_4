@@ -6,7 +6,7 @@
 #    By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/28 10:53:54 by jrinna            #+#    #+#              #
-#    Updated: 2022/09/29 09:15:22 by jrinna           ###   ########lyon.fr    #
+#    Updated: 2022/10/03 11:23:51 by jrinna           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ OBJ := ${addprefix ${DIR_OBJ}/,${LST_OBJ}}
 INC := ${addprefix ${DIR_INC}/,${LST_INC}}
 
 CC := c++ -std=c++98
-CFLAGS := -Wall -Wextra -Werror -Wshadow
+CFLAGS := -Wall -Wextra -Werror -Wshadow #-fsanitize=address -g3
 NAME := animal_sound
 
 all : ${NAME}

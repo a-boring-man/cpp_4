@@ -32,3 +32,4 @@
 *.app
 animal_sound
 .object
+animal_sound.dSYM

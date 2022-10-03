@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 12:44:10 by jrinna            #+#    #+#             */
-/*   Updated: 2022/09/29 11:07:35 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/10/03 10:56:14 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Cat::Cat( const Cat & src ) {
 
 	cout << "cat COPY constructor called" << endl;
 	this->_type = src._type;
-	this->_brain = src._brain;
+	this->_brain = new Brain(*src.getBrainAdress());
 	return;
 }
 
@@ -47,17 +47,20 @@ Cat::~Cat() {
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Cat &				Cat::operator=( Cat const & rhs )
-{
+Cat &				Cat::operator=( Cat const & rhs ) {
+
 	if ( this != &rhs )
 	{
+		delete this->_brain;
+		this->_brain = new Brain();
+		*(this->_brain) = *(rhs._brain);
 		this->_type = rhs.getType();
 	}
 	return *this;
 }
 
-std::ostream &			operator<<( std::ostream & o, Cat const & C )
-{
+std::ostream &			operator<<( std::ostream & o, Cat const & C ) {
+
 	o << "type = " << C.getType() << "brain locate in : " << C.getBrainAdress();
 	return o;
 }

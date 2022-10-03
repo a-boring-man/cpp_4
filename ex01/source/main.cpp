@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 10:55:30 by jrinna            #+#    #+#             */
-/*   Updated: 2022/09/29 15:16:05 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/10/03 11:27:50 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,21 @@
 
 int main() {
 
-	const Dog	*D1 = new Dog();
-	const Dog	*D2 = new Dog();
+	Dog	*D1 = new Dog();
+	const Dog	*D2 = new Dog(*D1);
 	const Animal	*C = new Cat();
 	const Brain	*tmpB;
 	const Brain	*tmpA;
+
+	*D1 = *D2;
 
 	cout << "------------------------" << endl;
 	D2->getBrainAdress()->setBrainIdea(42, "salut");
 	tmpA = D1->getBrainAdress();
 	tmpB = D2->getBrainAdress();
 	cout << tmpA << endl << tmpB << endl;
+	cout << tmpB->getBrainIdea(42) << endl;
+	cout << tmpA->getBrainIdea(42) << endl;
 
 	cout << "------------------------" << endl;
 	delete D1;

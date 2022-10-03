@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 13:09:16 by jrinna            #+#    #+#             */
-/*   Updated: 2022/09/29 11:40:22 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/10/03 11:30:24 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Dog::Dog( const Dog & src ) {
 
 	cout << "Dog DEFAULT constructor called" << endl;
 	this->_type = src._type;
-	this->_brain = src._brain;
+	this->_brain = new Brain(*src.getBrainAdress());
 	return;
 }
 
@@ -53,6 +53,8 @@ Dog &				Dog::operator=( Dog const & rhs )
 {
 	if ( this != &rhs )
 	{
+		delete this->_brain;
+		this->_brain = new Brain(*rhs.getBrainAdress());
 		this->_type = rhs.getType();
 	}
 	return *this;
