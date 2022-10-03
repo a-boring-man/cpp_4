@@ -1,87 +1,83 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/28 12:44:10 by jrinna            #+#    #+#             */
-/*   Updated: 2022/10/03 11:40:27 by jrinna           ###   ########lyon.fr   */
+/*   Created: 2022/10/03 11:39:36 by jrinna            #+#    #+#             */
+/*   Updated: 2022/10/03 11:41:52 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Cat.hpp"
+
+#include "AAnimal.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Cat::Cat() {
+AAnimal::AAnimal() : _type("AAnimal") {
 
-	cout << "cat DEFAULT constructor called" << endl;
-	this->_type = "cat";
-	this->_brain = new Brain();
+	cout << "AAnimal DEFAULT constructor called" << endl;
 	return;
 }
 
-Cat::Cat( const Cat & src ) {
+AAnimal::AAnimal( const AAnimal & src ) : _type(src._type) {
 
-	cout << "cat COPY constructor called" << endl;
-	this->_type = src._type;
-	this->_brain = new Brain(*src.getBrainAdress());
+	cout << "AAnimal COPY constructor called" << endl;
 	return;
 }
+
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Cat::~Cat() {
+AAnimal::~AAnimal() {
 
-	cout << "cat destructor called" << endl;
-	delete this->_brain;
+	cout << "AAnimal destructor called" << endl;
 	return;
 }
+
 
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Cat &				Cat::operator=( Cat const & rhs ) {
-
+AAnimal &				AAnimal::operator=( AAnimal const & rhs )
+{
 	if ( this != &rhs )
 	{
-		delete this->_brain;
-		this->_brain = new Brain(*rhs.getBrainAdress());
 		this->_type = rhs.getType();
 	}
 	return *this;
 }
 
-std::ostream &			operator<<( std::ostream & o, Cat const & C ) {
-
-	o << "type = " << C.getType() << "brain locate in : " << C.getBrainAdress();
+std::ostream &			operator<<( std::ostream & o, AAnimal const & A )
+{
+	o << "type = " << A.getType();
 	return o;
 }
+
 
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void	Cat::makeSound( void ) const {
+void	AAnimal::makeSound( void ) const {
 
-	cout << "Miaou !" << endl;
+	cout << "strange AAnimal sound !" << endl;
 	return;
-}
-
-Brain * Cat::getBrainAdress( void ) const {
-
-	return(this->_brain);
 }
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
+string	AAnimal::getType( void ) const {
+
+	return (this->_type);
+}
 
 /* ************************************************************************** */

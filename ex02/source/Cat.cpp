@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 12:44:10 by jrinna            #+#    #+#             */
-/*   Updated: 2022/10/03 11:40:27 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/10/03 10:56:14 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,8 @@ Cat &				Cat::operator=( Cat const & rhs ) {
 	if ( this != &rhs )
 	{
 		delete this->_brain;
-		this->_brain = new Brain(*rhs.getBrainAdress());
+		this->_brain = new Brain();
+		*(this->_brain) = *(rhs._brain);
 		this->_type = rhs.getType();
 	}
 	return *this;

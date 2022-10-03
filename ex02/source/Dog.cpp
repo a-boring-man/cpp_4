@@ -1,54 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/28 12:44:10 by jrinna            #+#    #+#             */
-/*   Updated: 2022/10/03 11:40:27 by jrinna           ###   ########lyon.fr   */
+/*   Created: 2022/09/28 13:09:16 by jrinna            #+#    #+#             */
+/*   Updated: 2022/10/03 11:30:24 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Cat.hpp"
+#include "../include/Dog.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Cat::Cat() {
+Dog::Dog() {
 
-	cout << "cat DEFAULT constructor called" << endl;
-	this->_type = "cat";
+	cout << "Dog DEFAULT constructor called" << endl;
+	this->_type = "Dog";
 	this->_brain = new Brain();
 	return;
 }
 
-Cat::Cat( const Cat & src ) {
+Dog::Dog( const Dog & src ) {
 
-	cout << "cat COPY constructor called" << endl;
+	cout << "Dog DEFAULT constructor called" << endl;
 	this->_type = src._type;
 	this->_brain = new Brain(*src.getBrainAdress());
 	return;
 }
 
+
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Cat::~Cat() {
+Dog::~Dog() {
 
-	cout << "cat destructor called" << endl;
+	cout << "Dog destructor called" << endl;
 	delete this->_brain;
 	return;
 }
+
 
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Cat &				Cat::operator=( Cat const & rhs ) {
-
+Dog &				Dog::operator=( Dog const & rhs )
+{
 	if ( this != &rhs )
 	{
 		delete this->_brain;
@@ -58,23 +60,24 @@ Cat &				Cat::operator=( Cat const & rhs ) {
 	return *this;
 }
 
-std::ostream &			operator<<( std::ostream & o, Cat const & C ) {
-
-	o << "type = " << C.getType() << "brain locate in : " << C.getBrainAdress();
+std::ostream &			operator<<( std::ostream & o, Dog const & D )
+{
+	o << "type = " << D.getType() << "brain locate in : " << D.getBrainAdress();
 	return o;
 }
+
 
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void	Cat::makeSound( void ) const {
+void	Dog::makeSound( void ) const {
 
-	cout << "Miaou !" << endl;
+	cout << "Wuf !" << endl;
 	return;
 }
 
-Brain * Cat::getBrainAdress( void ) const {
+Brain * Dog::getBrainAdress( void ) const {
 
 	return(this->_brain);
 }
