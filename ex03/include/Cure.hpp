@@ -29,7 +29,7 @@ class Cure : public AMateria
 
 		AMateria*	clone( void ) const;
 
-		virtual void		use( const string target ); // data type modifier car incoplet;
+		virtual void		use( ICharacter& target );
 
 	private:
 

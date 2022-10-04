@@ -6,12 +6,12 @@
 #    By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/28 10:53:54 by jrinna            #+#    #+#              #
-#    Updated: 2022/10/03 16:23:36 by jrinna           ###   ########lyon.fr    #
+#    Updated: 2022/10/04 13:16:19 by jrinna           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-LST_SRC := AMateria.cpp Ice.cpp Cure.cpp Character.cpp main.cpp
-LST_INC := AMateria.hpp Ice.hpp Cure.hpp Character.hpp ICharacter.hpp
+LST_SRC := AMateria.cpp Ice.cpp Cure.cpp Character.cpp MateriaSource.cpp main.cpp
+LST_INC := AMateria.hpp Ice.hpp Cure.hpp Character.hpp MateriaSource.hpp ICharacter.hpp IMateriaSource.hpp
 LST_OBJ := ${LST_SRC:.cpp=.o}
 
 DIR_SRC := source

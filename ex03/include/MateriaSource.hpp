@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/03 14:30:54 by jrinna            #+#    #+#             */
-/*   Updated: 2022/10/04 11:20:40 by jrinna           ###   ########lyon.fr   */
+/*   Created: 2022/10/04 13:15:35 by jrinna            #+#    #+#             */
+/*   Updated: 2022/10/04 13:27:12 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,25 @@
 
 # include <iostream>
 # include <string>
-# include "AMateria.hpp"
+# include "IMateriaSource.hpp"
 
-class Ice : public AMateria
+class MateriaSource
 {
 
 	public:
 
-		Ice();
-		Ice( Ice const & src );
-		~Ice();
+		MateriaSource();
+		MateriaSource( MateriaSource const & src );
+		~MateriaSource();
 
-		Ice &		operator=( Ice const & rhs );
+		MateriaSource &		operator=( MateriaSource const & rhs );
 
-		AMateria*	clone( void ) const;
-
-		virtual void		use( ICharacter& target );
+		void 		learnMateria(AMateria*);
+		AMateria*	createMateria(std::string const & type);
 
 	private:
 
+		AMateria*	_inventory[4];
 };
 
-std::ostream &			operator<<( std::ostream & o, Ice const & I );
+std::ostream &			operator<<( std::ostream & o, MateriaSource const & i );

@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 11:58:07 by jrinna            #+#    #+#             */
-/*   Updated: 2022/10/03 15:40:44 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/10/04 11:20:35 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 
 # include <iostream>
 # include <string>
+# include "ICharacter.hpp"
 
 using std::cout;
 using std::endl;
 using std::string;
+
+class ICharacter;
 
 class AMateria
 {
@@ -34,7 +37,7 @@ class AMateria
 		string	const &		getType( void ) const;
 
 		virtual AMateria*	clone() const = 0;
-		virtual void		use( const string target ); // data type modifier car incoplet;
+		virtual void		use( ICharacter& target );
 
 	protected:
 

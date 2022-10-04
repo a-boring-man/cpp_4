@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 16:22:19 by jrinna            #+#    #+#             */
-/*   Updated: 2022/10/03 17:13:18 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/10/04 15:09:19 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,20 @@ class Character : public ICharacter
 
 		Character &		operator=( Character const & rhs );
 
-		string const & getName( void ) const;
-		void 			equip(AMateria* m);
+		string const &	getName( void ) const;
+		int				getFloorsize( void ) const;
+		AMateria*		getInv( int i ) const;
+
+		void 	equip( AMateria* m );
+		void 	use( int idx, ICharacter& target );
+		void 	unequip(int idx);
 
 	private:
 
 		string		_name;
 		AMateria*	_inventory[4];
+		long*		_floor;
+		long			_floorsize;
 };
 
 std::ostream &			operator<<( std::ostream & o, Character const & C );

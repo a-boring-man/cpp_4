@@ -1,47 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.cpp                                       :+:      :+:    :+:   */
+/*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/03 11:58:25 by jrinna            #+#    #+#             */
-/*   Updated: 2022/10/04 11:19:05 by jrinna           ###   ########lyon.fr   */
+/*   Created: 2022/10/04 13:26:15 by jrinna            #+#    #+#             */
+/*   Updated: 2022/10/04 13:26:29 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
+#include "MateriaSource.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-AMateria::AMateria() : _type("Unknown") {
+MateriaSource::MateriaSource() {
 
-	cout << "AMateria DEFAULT constructor called" << endl;
-	return;
+	
 }
 
-AMateria::AMateria( const AMateria & src ) : _type(src._type) {
-
-	cout << "AMateria COPY constructor called" << endl;
-	return;
+MateriaSource::MateriaSource( const MateriaSource & src )
+{
 }
 
-AMateria::AMateria( string const & type ) : _type(type) {
-
-	cout << "AMateria TYPE constructor called" << endl;
-	return;
-}
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-AMateria::~AMateria() {
-
-	cout << "AMateria destructor called" << endl;
-	return;
+MateriaSource::~MateriaSource()
+{
 }
 
 
@@ -49,18 +39,18 @@ AMateria::~AMateria() {
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-AMateria &				AMateria::operator=( AMateria const & rhs )
+MateriaSource &				MateriaSource::operator=( MateriaSource const & rhs )
 {
-	if ( this != &rhs )
-	{
-		this->_type = rhs.getType();
-	}
+	//if ( this != &rhs )
+	//{
+		//this->_value = rhs.getValue();
+	//}
 	return *this;
 }
 
-std::ostream &			operator<<( std::ostream & o, AMateria const & A )
+std::ostream &			operator<<( std::ostream & o, MateriaSource const & i )
 {
-	o << "Type = " << A.getType();
+	//o << "Value = " << i.getValue();
 	return o;
 }
 
@@ -69,18 +59,10 @@ std::ostream &			operator<<( std::ostream & o, AMateria const & A )
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void	AMateria::use( ICharacter& target ) {
-
-	cout << "Unknown: \"* use dark magic on " << target.getName() << " *\"" << endl;
-}
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
-const string	&AMateria::getType ( void ) const {
-
-	return (this->_type);
-}
 
 /* ************************************************************************** */

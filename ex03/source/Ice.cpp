@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 14:30:52 by jrinna            #+#    #+#             */
-/*   Updated: 2022/10/03 15:45:21 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/10/04 11:23:42 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,9 @@ AMateria*	Ice::clone( void ) const {
 	return(clone);
 }
 
-void	Ice::use( const string target ) {
+void	Ice::use( ICharacter& target ) {
 
-	cout << "Ice: \"* shoot an ice bolt at " << target << " *\"" << endl;
+	cout << "* shoot an ice bolt at " << target.getName() << " *" << endl;
 }
 
 /*

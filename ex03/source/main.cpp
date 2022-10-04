@@ -6,12 +6,13 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 11:59:16 by jrinna            #+#    #+#             */
-/*   Updated: 2022/10/03 15:48:30 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/10/04 13:08:24 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 #include "Cure.hpp"
+#include "Character.hpp"
 
 int	main( void ) {
 /* 
@@ -29,6 +30,9 @@ int	main( void ) {
 	Ice	salut = Ice();
 	Ice	coucou = Ice(salut);
 	AMateria*	haha = coucou.clone();
+	Character	me = Character();
+	Character	usane = Character("usane");
+	Character	heu = Character("heu...");
 
 	cout << "-------------------------" << endl;
 	Cure	salut2 = Cure();
@@ -39,11 +43,28 @@ int	main( void ) {
 	cout << "salut : " << salut << endl;
 	cout << "coucou : " << coucou << endl;
 	cout << "test : " << *haha << endl;
-	salut.use("Usane");
+	salut.use(usane);
 	cout << "salut2 : " << salut2 << endl;
 	cout << "coucou2 : " << coucou2 << endl;
 	cout << "test2 : " << *haha2 << endl;
-	salut2.use("heu...");
+	salut2.use(heu);
+	cout << "-------------------------" << endl;
+	cout << me.getName() << endl;
+	me.equip(&salut);
+	me.equip(&salut2);
+	me.use(0, usane);
+	cout << "-----------heuuuu--------------" << endl;
+	me.use(2, usane);
+	cout << "-----------heuuuu--------------" << endl;
+	me.use(1, usane);
+	me.unequip(1);
+	me.equip(&coucou);
+	me.use(1, usane);
+
+
+
+	
+	cout << "-------------------------" << endl;
 
 	delete haha;
 	delete haha2;
