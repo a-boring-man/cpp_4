@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 16:22:19 by jrinna            #+#    #+#             */
-/*   Updated: 2022/10/04 15:09:19 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/10/05 09:31:39 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ class Character : public ICharacter
 		string		_name;
 		AMateria*	_inventory[4];
 		long*		_floor;
-		long			_floorsize;
+		long		_floorsize;
 };
 
 std::ostream &			operator<<( std::ostream & o, Character const & C );

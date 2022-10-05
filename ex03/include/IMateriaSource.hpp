@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 13:13:53 by jrinna            #+#    #+#             */
-/*   Updated: 2022/10/04 13:14:55 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/10/05 10:18:43 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class IMateriaSource
 	public:
 
 		virtual ~IMateriaSource() {}
-		virtual void learnMateria(AMateria*) = 0;
-		virtual AMateria* createMateria(std::string const & type) = 0;
+		virtual void learnMateria( AMateria* A ) = 0;
+		virtual AMateria* createMateria( std::string const & type ) = 0;
 
 };

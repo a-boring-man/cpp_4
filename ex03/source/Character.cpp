@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 16:38:00 by jrinna            #+#    #+#             */
-/*   Updated: 2022/10/04 15:09:58 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/10/05 10:08:42 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,11 @@ Character::Character( const string name ) : _name(name) , _floorsize(0) {
 Character::~Character() {
 
 	cout << "character destructor called" << endl;
+	for (int i = 0; i < 4; i++)
+	{
+		this->unequip(i);
+	}
+	delete this->_floor;
 	return;
 }
 
@@ -63,6 +68,11 @@ Character &				Character::operator=( Character const & rhs )
 	if ( this != &rhs )
 	{
 		this->_name = rhs.getName();
+		for (int i = 0; i < 4; i++)
+		{
+			this->unequip(i);
+			this->equip(rhs._inventory[i]);
+		}
 	}
 	return *this;
 }
@@ -89,6 +99,8 @@ void	Character::equip( AMateria* m ) {
 			return;
 		}
 	}
+	cout << this->getName() << " was unable to equip : " << m->getType() << " because his inventory was full" << endl;
+	delete m;
 	return;
 }
 
@@ -113,6 +125,7 @@ void 	Character::unequip(int idx) {
 		this->_floor = newfloor;
 		this->_floor[this->_floorsize - 1] = long(this->_inventory[idx]);
 	}
+	return;
 }
 
 /*
