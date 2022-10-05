@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 13:26:15 by jrinna            #+#    #+#             */
-/*   Updated: 2022/10/05 11:34:10 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/10/05 13:42:52 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,9 +112,11 @@ AMateria*	MateriaSource::createMateria( const string & type ) {
 	{
 		if (!type.compare(this->getInv(i)->getType()))
 		{
+			cout << "found a materia matching : " << type << " in slot : " << i << endl;
 			return (this->getInv(i)->clone());
 		}
 	}
+	cout << "couldn't found a materia matching : " << type << endl;
 	return (NULL);
 }
 

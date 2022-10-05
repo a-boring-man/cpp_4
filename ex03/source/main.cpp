@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 11:59:16 by jrinna            #+#    #+#             */
-/*   Updated: 2022/10/05 12:22:05 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/10/05 13:40:11 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,31 +92,88 @@ int	main( void ) {
 	
 	cout << endl << "-----------------MATERIA SOURCE TEST :---------------" << endl << endl;
 
-	cout << "-----------------CREATION---------------" << endl;
-	cout << "-----------------CREATION MATERIA SOURCE---------------" << endl;
+	cout << endl << "-----------------CREATION MATERIA SOURCE :---------------" << endl << endl;
 	MateriaSource*	src1 = new MateriaSource();
 	MateriaSource*	src3 = new MateriaSource();
-	cout << "-----------------CREATION MATERIA---------------" << endl;
+	
+	cout << endl << "-----------------CREATION TARGET CHARACTER :---------------" << endl << endl;
+	Character	target = Character("poor victim");
+
+	cout << endl << "-----------------TARGET DISPLAY :---------------" << endl << endl;
+	cout << target << endl;
+
+	cout << endl << "-----------------CREATION MATERIA :---------------" << endl << endl;
 	AMateria*		ice = new Ice();
 	AMateria*		cure = new Cure();
 
-	cout << "-----------------FUNCTION TEST---------------" << endl;
+	cout << endl << "-----------------FUNCTION LEARN TEST :---------------" << endl << endl;
 	src1->learnMateria(ice);
 	src1->learnMateria(ice);
-	cout << "-----------------TRYING COPY---------------" << endl;
+
+	cout << endl << "-----------------COPY CONSTRUCTOR TEST :---------------" << endl << endl;
 	MateriaSource*	src2 = new MateriaSource(*src1);
-	cout << "-----------------FUNCTION TEST---------------" << endl;
+
+	cout << endl << "-----------------FUNCTION LEARN TEST :---------------" << endl << endl;
 	src1->learnMateria(cure);
-	cout << "-----------------TRYING ASSIGNMENT---------------" << endl;
+
+	cout << endl << "-----------------ASSIGNMENT TEST :---------------" << endl << endl;
 	*src3 = *src1;
-	cout << "-----------------FUNCTION TEST---------------" << endl;
+
+	cout << endl << "-----------------FUNCTION LEARN TEST :---------------" << endl << endl;
 	src1->learnMateria(cure);
 	src1->learnMateria(cure);
 	src3->learnMateria(ice);
-	cout << "-----------------DISPLAY SOURCE CONTENT---------------" << endl;
+
+	cout << endl << "-----------------DISPLAY MATERIA SOURCE CONTENT :---------------" << endl << endl;
 	cout << *src1 << endl;
 	cout << *src2 << endl;
 	cout << *src3 << endl;
+
+	cout << endl << "-----------------FUNCTION CREATE TEST :---------------" << endl << endl;
+	AMateria* tmp;
+
+	cout << endl << "-----------------FUNCTION CREATE SRC1 :---------------" << endl << endl;
+	tmp = src1->createMateria("ice");
+	if (tmp)
+		tmp->use(target);
+	delete tmp;
+	tmp = src1->createMateria("cure");
+	if (tmp)
+		tmp->use(target);
+	delete tmp;
+	tmp = src1->createMateria("Cure");
+	if (tmp)
+		tmp->use(target);
+	delete tmp;
+
+	cout << endl << "-----------------FUNCTION CREATE SRC2 :---------------" << endl << endl;
+	tmp = src2->createMateria("ice");
+	if (tmp)
+		tmp->use(target);
+	delete tmp;
+	tmp = src2->createMateria("cure");
+	if (tmp)
+		tmp->use(target);
+	delete tmp;
+	tmp = src3->createMateria("Cure");
+	if (tmp)
+		tmp->use(target);
+	delete tmp;
+
+	cout << endl << "-----------------FUNCTION CREATE SRC3 :---------------" << endl << endl;
+	tmp = src3->createMateria("ice");
+	if (tmp)
+		tmp->use(target);
+	delete tmp;
+	tmp = src3->createMateria("cure");
+	if (tmp)
+		tmp->use(target);
+	delete tmp;
+	tmp = src2->createMateria("Cure");
+	if (tmp)
+		tmp->use(target);
+	delete tmp;
+
 	cout << "-----------------CLEAN UP---------------" << endl;
 	delete src1;
 	delete src2;

@@ -19,7 +19,7 @@
 Cure::Cure() {
 
 	cout << "Cure DEFAULT constructor called" << endl;
-	this->_type = "Cure";
+	this->_type = "cure";
 	return;
 }
 
