@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 11:59:16 by jrinna            #+#    #+#             */
-/*   Updated: 2022/10/05 15:02:25 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/10/05 15:35:20 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -232,15 +232,30 @@ int	main( void ) {
 	character1.equip(tmp);
 	tmp = src->createMateria("ice");
 	character1.equip(tmp);
+
+	cout << endl << "-----------------COPY CONSTRUCTOR TEST :---------------" << endl << endl;
+	Character	character4 = Character(character1);
+
+	cout << endl << "-----------------EQUIP TEST :---------------" << endl << endl;
 	tmp = src->createMateria("cure");
 	character1.equip(tmp);
 	tmp = src->createMateria("Cce");
 	character1.equip(tmp);
+
+	cout << endl << "-----------------ASSIGNATION TEST :---------------" << endl << endl;
+	character3 = character1;
+
+	cout << endl << "-----------------EQUIP TEST :---------------" << endl << endl;
+	tmp = src->createMateria("cure");
+	character1.equip(tmp);
+	tmp = src->createMateria("ice");
+	character3.equip(tmp);
 	
 	cout << endl << "-----------------DISPLAY CHARACTER :---------------" << endl << endl;
 	cout << character1 << endl;
 	cout << character2 << endl;
 	cout << character3 << endl;
+	cout << character4 << endl;
 
 
 	delete src;

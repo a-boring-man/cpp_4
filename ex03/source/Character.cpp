@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 16:38:00 by jrinna            #+#    #+#             */
-/*   Updated: 2022/10/05 15:00:41 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/10/05 15:37:55 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,12 @@ Character::Character( const Character & src ) : _name(src.getName()) , _floorsiz
 
 	cout << "COPY character constructor called" << endl;
 	for (int i = 0; i < 4; i++)
-		_inventory[i] = src.getInv(i);
+	{
+		if (src._inventory[i])
+			_inventory[i] = src._inventory[i]->clone();
+		else
+			_inventory[i] = 0;
+	}
 	this->_floor = new long[_floorsize];
 	return;
 }
@@ -52,7 +57,7 @@ Character::~Character() {
 	cout << "character destructor called" << endl;
 	for (int i = 0; i < 4; i++)
 	{
-		this->unequip(i);
+		delete this->_inventory[i];
 	}
 	for (int i = 0; i < this->_floorsize; i++)
 	{
@@ -77,8 +82,11 @@ Character &				Character::operator=( Character const & rhs )
 		this->_name = rhs.getName();
 		for (int i = 0; i < 4; i++)
 		{
-			this->unequip(i);
-			this->equip(rhs._inventory[i]);
+			delete this->_inventory[i];
+			if (rhs._inventory[i])
+				this->_inventory[i] = rhs._inventory[i]->clone();
+			else
+				this->_inventory[i] = 0;
 		}
 	}
 	return *this;
@@ -139,6 +147,12 @@ void 	Character::unequip(int idx) {
 		for (long i = 0; i < this->_floorsize - 1; i++)
 		{
 			newfloor[i] = _floor[i];
+		}
+		for (int i = 0; i < this->_floorsize - 1; i++)
+		{
+			if (this->_floor[i])
+				cout << "floor slot : " << i << " contain : -" << ((AMateria*)(_floor[i]))->getType() << "-";
+			delete (AMateria*)this->_floor[i];
 		}
 		delete this->_floor;
 		this->_floor = newfloor;
