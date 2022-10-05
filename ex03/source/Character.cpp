@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 16:38:00 by jrinna            #+#    #+#             */
-/*   Updated: 2022/10/05 10:08:42 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/10/05 15:00:41 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,14 @@ Character::~Character() {
 	{
 		this->unequip(i);
 	}
+	for (int i = 0; i < this->_floorsize; i++)
+	{
+		if (this->_floor[i])
+			cout << "floor slot : " << i << " contain : -" << ((AMateria*)(_floor[i]))->getType() << "-";
+		delete (AMateria*)this->_floor[i];
+	}
 	delete this->_floor;
+	
 	return;
 }
 
@@ -79,7 +86,15 @@ Character &				Character::operator=( Character const & rhs )
 
 std::ostream &			operator<<( std::ostream & o, Character const & C )
 {
-	o << "Name = " << C.getName();
+	o << "Name = " << C.getName() << "||";
+	for (int i = 0; i < 4; i++)
+	{
+		if (C.getInv(i))
+		{
+			o << " slot : " << i << " contain : -" << C.getInv(i)->getType() << "-" << endl;
+		}
+	}
+	o << endl;
 	return o;
 }
 
@@ -95,11 +110,15 @@ void	Character::equip( AMateria* m ) {
 		if (!_inventory[i])
 		{
 			_inventory[i] = m;
-			cout << this->getName() << " has equip : " << m->getType() << " in slot : " << i << endl;
+			if (m)
+				cout << this->getName() << " has equip : " << m->getType() << " in slot : " << i << endl;
+			else
+				cout << this->getName() << " has equip nothing in slot : " << i << endl;
 			return;
 		}
 	}
-	cout << this->getName() << " was unable to equip : " << m->getType() << " because his inventory was full" << endl;
+	if (m)
+		cout << this->getName() << " was unable to equip : " << m->getType() << " because his inventory was full" << endl;
 	delete m;
 	return;
 }

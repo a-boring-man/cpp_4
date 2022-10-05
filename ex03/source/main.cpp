@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 11:59:16 by jrinna            #+#    #+#             */
-/*   Updated: 2022/10/05 14:12:26 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/10/05 15:02:25 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,23 @@ int	main( void ) {
 	delete copycure2;
 	delete copycure3; */
 
-	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	//test sur materia source
 	
 	/* cout << endl << "-----------------MATERIA SOURCE TEST :---------------" << endl << endl;
@@ -183,45 +199,54 @@ int	main( void ) {
 
 	
 	//test sur Character
+	cout << endl << "-----------------CHARACTER TEST :---------------" << endl << endl;
+ 
+	cout << endl << "-----------------CREATION CHARACTER TEST :---------------" << endl << endl;
+	Character	character1 = Character();
+	Character	character2 = Character("poor victim");
+	Character	character3 = Character();
 
-	cout << "-----------------DESTRUCTION CALL---------------" << endl;
+	cout << endl << "-----------------CREATION MATERIA SOURCE :---------------" << endl << endl;
+	MateriaSource*	src = new MateriaSource();
+
+	cout << endl << "-----------------CREATION MATERIA :---------------" << endl << endl;
+	AMateria*		ice = new Ice();
+	AMateria*		cure = new Cure();
+
+	cout << endl << "-----------------LEARNING MATERIA :---------------" << endl << endl;
+	src->learnMateria(ice);
+	src->learnMateria(cure);
 	
-/* 
-	AMateria	salut = AMateria();
-	AMateria	coucou = AMateria("Ice");
-	AMateria	tu = AMateria(coucou);
+	cout << endl << "-----------------DISPLAY MATERIA SOURCE :---------------" << endl << endl;
+	cout << *src << endl;
 
-	salut = coucou;
+	cout << endl << "-----------------DISPLAY CHARACTER :---------------" << endl << endl;
+	cout << character1 << endl;
+	cout << character2 << endl;
+	cout << character3 << endl;
+	
+	cout << endl << "-----------------EQUIPE TEST :---------------" << endl << endl;
+	AMateria*	tmp;
 
-	cout << "salut : " << salut << endl;
-	cout << "tu : " << tu << endl;
-	cout << "coucou : " << coucou << endl;
-	 */
+	tmp = src->createMateria("ice");
+	character1.equip(tmp);
+	tmp = src->createMateria("ice");
+	character1.equip(tmp);
+	tmp = src->createMateria("cure");
+	character1.equip(tmp);
+	tmp = src->createMateria("Cce");
+	character1.equip(tmp);
+	
+	cout << endl << "-----------------DISPLAY CHARACTER :---------------" << endl << endl;
+	cout << character1 << endl;
+	cout << character2 << endl;
+	cout << character3 << endl;
 
-	/* Ice	salut = Ice();
-	Ice	coucou = Ice(salut);
-	AMateria*	haha = coucou.clone();
-	Character	me = Character();
-	Character	usane = Character("usane");
-	Character	heu = Character("heu...");
 
-	cout << "-------------------------" << endl;
-	Cure	salut2 = Cure();
-	Cure	coucou2 = Cure(salut2);
-	AMateria*	haha2 = coucou2.clone();
-	cout << "-------------------------" << endl;
-
-	cout << "salut : " << salut << endl;
-	cout << "coucou : " << coucou << endl;
-	cout << "test : " << *haha << endl;
-	salut.use(usane);
-	cout << "salut2 : " << salut2 << endl;
-	cout << "coucou2 : " << coucou2 << endl;
-	cout << "test2 : " << *haha2 << endl;
-	salut2.use(heu);
-	cout << "-------------------------" << endl;
-	cout << me.getName() << endl;
-	me.equip(&salut);
+	delete src;
+	delete ice;
+	delete cure;
+	/* me.equip(&salut);
 	me.equip(&salut2);
 	me.use(0, usane);
 	cout << "-----------heuuuu--------------" << endl;
@@ -230,16 +255,8 @@ int	main( void ) {
 	me.use(1, usane);
 	me.unequip(1);
 	me.equip(&coucou);
-	me.use(1, usane);
+	me.use(1, usane); */
 
-
-
-	
-	cout << "-------------------------" << endl;
-
-	delete haha;
-	delete haha2;
-	cout << "-------------------------" << endl; */
-	
+	cout << "-----------------DESTRUCTION CALL---------------" << endl;
 	return (0);
 }
