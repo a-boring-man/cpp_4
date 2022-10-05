@@ -50,6 +50,7 @@ Cure &				Cure::operator=( Cure const & rhs )
 {
 	if ( this != &rhs )
 	{
+		cout << "cure ASSIGNMENT operator called" << endl;
 		this->_type = rhs.getType();
 	}
 	return *this;

@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 13:26:15 by jrinna            #+#    #+#             */
-/*   Updated: 2022/10/05 11:31:35 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/10/05 11:34:10 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,11 @@ MateriaSource::MateriaSource( const MateriaSource & src ) {
 	for (int i = 0; i < 4; i++)
 	{
 		clone = NULL;
-		cout << "trying to put : " << src._inventory[i];
 		if (src._inventory[i])
 		{
 			clone = src._inventory[i]->clone();
 			this->_inventory[i] = clone;
-			cout << " of type " << src._inventory[i]->getType() << endl;
-			if (this->_inventory[i])
-				cout << "so now" << this->_inventory[i]->getType() << endl;
 		}
-		cout << "donc" << this->_inventory[i] << endl;
 		delete clone;
 	}
 	return;

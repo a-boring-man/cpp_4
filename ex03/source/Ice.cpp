@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 14:30:52 by jrinna            #+#    #+#             */
-/*   Updated: 2022/10/04 11:23:42 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/10/05 12:17:35 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ Ice &				Ice::operator=( Ice const & rhs )
 {
 	if ( this != &rhs )
 	{
+		cout << "ice ASSIGNMENT operator called" << endl;
 		this->_type = rhs.getType();
 	}
 	return *this;

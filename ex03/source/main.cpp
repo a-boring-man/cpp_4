@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 11:59:16 by jrinna            #+#    #+#             */
-/*   Updated: 2022/10/05 11:32:22 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/10/05 12:22:05 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,81 @@
 
 int	main( void ) {
 
-	cout << "-----------------MATERIA SOURCE TEST :---------------" << endl;
+	//test sur les materias
+	/* cout << endl << "-----------------MATERIA TEST :---------------" << endl << endl;
+
+	cout << endl << "-----------------ICE CREATION AND ASSIGNATION :---------------" << endl << endl;
+	Ice ice1 = Ice();
+	Ice ice2 = Ice(ice1);
+	Ice ice3 = Ice();
+	ice3 = ice1;
+
+	cout << endl << "-----------------ICE DISPLAY :---------------" << endl << endl;
+	cout << ice1 << endl;
+	cout << ice2 << endl;
+	cout << ice3 << endl;
+	
+	cout << endl << "-----------------CURE CREATION AND ASSIGNATION :---------------" << endl << endl;
+	Cure cure1 = Cure();
+	Cure cure2 = Cure(cure1);
+	Cure cure3 = Cure();
+	cure3 = cure1;
+
+	cout << endl << "-----------------CURE DISPLAY :---------------" << endl << endl;
+	cout << cure1 << endl;
+	cout << cure2 << endl;
+	cout << cure3 << endl;
+
+	cout << endl << "-----------------TARGET CREATION :---------------" << endl << endl;
+	Character	target = Character("poor victim");
+
+	cout << endl << "-----------------TARGET DISPLAY :---------------" << endl << endl;
+	cout << target << endl;
+
+	cout << endl << "-----------------MATERIA USE FUNCTION :---------------" << endl << endl;
+	ice1.use(target);
+	ice2.use(target);
+	ice3.use(target);
+	cure1.use(target);
+	cure2.use(target);
+	cure3.use(target);
+
+	cout << endl << "-----------------MATERIA CLONE FUNCTION :---------------" << endl << endl;
+	AMateria* copyice1;
+	AMateria* copyice2;
+	AMateria* copyice3;
+	AMateria* copycure1;
+	AMateria* copycure2;
+	AMateria* copycure3;
+
+	copyice1 = ice1.clone();
+	copyice2 = ice2.clone();
+	copyice3 = ice3.clone();
+	copycure1 = cure1.clone();
+	copycure2 = cure2.clone();
+	copycure3 = cure3.clone();
+
+	cout << endl << "-----------------MATERIA CLONE USE FUNCTION :---------------" << endl << endl;
+	copyice1->use(target);
+	copyice2->use(target);
+	copyice3->use(target);
+	copycure1->use(target);
+	copycure2->use(target);
+	copycure3->use(target);
+
+	cout << endl << "-----------------MATERIA CLONE DELETION :---------------" << endl << endl;
+	delete copyice1;
+	delete copyice2;
+	delete copyice3;
+	delete copycure1;
+	delete copycure2;
+	delete copycure3; */
+
+	
+	//test sur materia source
+	
+	cout << endl << "-----------------MATERIA SOURCE TEST :---------------" << endl << endl;
+
 	cout << "-----------------CREATION---------------" << endl;
 	cout << "-----------------CREATION MATERIA SOURCE---------------" << endl;
 	MateriaSource*	src1 = new MateriaSource();
@@ -29,9 +103,13 @@ int	main( void ) {
 	cout << "-----------------FUNCTION TEST---------------" << endl;
 	src1->learnMateria(ice);
 	src1->learnMateria(ice);
+	cout << "-----------------TRYING COPY---------------" << endl;
 	MateriaSource*	src2 = new MateriaSource(*src1);
+	cout << "-----------------FUNCTION TEST---------------" << endl;
 	src1->learnMateria(cure);
+	cout << "-----------------TRYING ASSIGNMENT---------------" << endl;
 	*src3 = *src1;
+	cout << "-----------------FUNCTION TEST---------------" << endl;
 	src1->learnMateria(cure);
 	src1->learnMateria(cure);
 	src3->learnMateria(ice);
