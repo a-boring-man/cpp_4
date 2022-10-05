@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 11:59:16 by jrinna            #+#    #+#             */
-/*   Updated: 2022/10/05 13:40:11 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/10/05 14:12:26 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ int	main( void ) {
 	
 	//test sur materia source
 	
-	cout << endl << "-----------------MATERIA SOURCE TEST :---------------" << endl << endl;
+	/* cout << endl << "-----------------MATERIA SOURCE TEST :---------------" << endl << endl;
 
 	cout << endl << "-----------------CREATION MATERIA SOURCE :---------------" << endl << endl;
 	MateriaSource*	src1 = new MateriaSource();
@@ -155,7 +155,7 @@ int	main( void ) {
 	if (tmp)
 		tmp->use(target);
 	delete tmp;
-	tmp = src3->createMateria("Cure");
+	tmp = src2->createMateria("Cure");
 	if (tmp)
 		tmp->use(target);
 	delete tmp;
@@ -169,7 +169,7 @@ int	main( void ) {
 	if (tmp)
 		tmp->use(target);
 	delete tmp;
-	tmp = src2->createMateria("Cure");
+	tmp = src3->createMateria("Cure");
 	if (tmp)
 		tmp->use(target);
 	delete tmp;
@@ -179,7 +179,10 @@ int	main( void ) {
 	delete src2;
 	delete src3;
 	delete ice;
-	delete cure;
+	delete cure; */
+
+	
+	//test sur Character
 
 	cout << "-----------------DESTRUCTION CALL---------------" << endl;
 	

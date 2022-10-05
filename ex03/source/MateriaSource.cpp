@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 13:26:15 by jrinna            #+#    #+#             */
-/*   Updated: 2022/10/05 13:42:52 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/10/05 14:11:19 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,20 @@ MateriaSource::MateriaSource() {
 
 MateriaSource::MateriaSource( const MateriaSource & src ) {
 
-	AMateria*	clone;
+	//AMateria*	clone;
 	cout << "MateriaSource COPY constructor called" << endl;
 	for (int i = 0; i < 4; i++)
 	{
-		clone = NULL;
+		//clone = NULL;
 		if (src._inventory[i])
 		{
-			clone = src._inventory[i]->clone();
-			this->_inventory[i] = clone;
+			//clone = src._inventory[i]->clone();
+			//this->_inventory[i] = clone;
+			this->_inventory[i] = src._inventory[i];
 		}
-		delete clone;
+		else
+			this->_inventory[i] = 0;
+		//delete clone;
 	}
 	return;
 }
@@ -77,7 +80,9 @@ std::ostream &			operator<<( std::ostream & o, MateriaSource const & M )
 	for (int i = 0; i < 4; i++)
 	{	
 		if (M.getInv(i))
+		{
 			o << " inventory slot : " << i << " contain -" << M.getInv(i)->getType() << "-";
+		}
 	}
 	o << endl;
 	return o;
@@ -110,7 +115,7 @@ AMateria*	MateriaSource::createMateria( const string & type ) {
 
 	for (int i = 0; i < 4; i++)
 	{
-		if (!type.compare(this->getInv(i)->getType()))
+		if (this->getInv(i) && !type.compare(this->getInv(i)->getType()))
 		{
 			cout << "found a materia matching : " << type << " in slot : " << i << endl;
 			return (this->getInv(i)->clone());
