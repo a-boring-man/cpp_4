@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 16:38:00 by jrinna            #+#    #+#             */
-/*   Updated: 2022/10/05 15:37:55 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/10/06 08:51:43 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,15 +148,17 @@ void 	Character::unequip(int idx) {
 		{
 			newfloor[i] = _floor[i];
 		}
-		for (int i = 0; i < this->_floorsize - 1; i++)
-		{
-			if (this->_floor[i])
-				cout << "floor slot : " << i << " contain : -" << ((AMateria*)(_floor[i]))->getType() << "-";
-			delete (AMateria*)this->_floor[i];
-		}
 		delete this->_floor;
 		this->_floor = newfloor;
 		this->_floor[this->_floorsize - 1] = long(this->_inventory[idx]);
+		for (long i = 0; i < this->_floorsize; i++)
+		{
+			if (this->_floor[i])
+				cout << "floor slot : " << i << " contain : -" << ((AMateria*)(_floor[i]))->getType() << "-";
+			if (i == this->_floorsize - 1)
+				cout << endl; 
+		}
+		this->_inventory[idx] = 0;
 	}
 	return;
 }

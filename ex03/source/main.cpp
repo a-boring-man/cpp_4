@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 11:59:16 by jrinna            #+#    #+#             */
-/*   Updated: 2022/10/05 15:35:20 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/10/06 08:56:18 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 int	main( void ) {
 
 	//test sur les materias
-	/* cout << endl << "-----------------MATERIA TEST :---------------" << endl << endl;
+	cout << endl << "-----------------MATERIA TEST :---------------" << endl << endl;
 
 	cout << endl << "-----------------ICE CREATION AND ASSIGNATION :---------------" << endl << endl;
 	Ice ice1 = Ice();
@@ -85,7 +85,7 @@ int	main( void ) {
 	delete copyice3;
 	delete copycure1;
 	delete copycure2;
-	delete copycure3; */
+	delete copycure3;
 
 
 
@@ -197,9 +197,28 @@ int	main( void ) {
 	delete ice;
 	delete cure; */
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	
 	//test sur Character
-	cout << endl << "-----------------CHARACTER TEST :---------------" << endl << endl;
+	/* cout << endl << "-----------------CHARACTER TEST :---------------" << endl << endl;
  
 	cout << endl << "-----------------CREATION CHARACTER TEST :---------------" << endl << endl;
 	Character	character1 = Character();
@@ -257,20 +276,93 @@ int	main( void ) {
 	cout << character3 << endl;
 	cout << character4 << endl;
 
+	cout << endl << "-----------------USE TEST :---------------" << endl << endl;
 
+	cout << endl << "-----------------character 1 USE TEST :---------------" << endl << endl;
+	character1.use(0, character2);
+	character1.use(1, character2);
+	character1.use(2, character2);
+	character1.use(3, character2);
+	character1.use(4, character2);
+	character1.use(-1, character2);
+
+	cout << endl << "-----------------character 2 USE TEST :---------------" << endl << endl;
+	character2.use(0, character2);
+	character2.use(1, character2);
+	character2.use(2, character2);
+	character2.use(3, character2);
+	character2.use(4, character2);
+	character2.use(-1, character2);
+
+	cout << endl << "-----------------character 3 USE TEST :---------------" << endl << endl;
+	character3.use(0, character2);
+	character3.use(1, character2);
+	character3.use(2, character2);
+	character3.use(3, character2);
+	character3.use(4, character2);
+	character3.use(-1, character2);
+
+	cout << endl << "-----------------character 4 USE TEST :---------------" << endl << endl;
+	character4.use(0, character2);
+	character4.use(1, character2);
+	character4.use(2, character2);
+	character4.use(3, character2);
+	character4.use(4, character2);
+	character4.use(-1, character2);
+
+	cout << endl << "-----------------DISPLAY CHARACTER :---------------" << endl << endl;
+	cout << character1 << endl;
+	cout << character2 << endl;
+	cout << character3 << endl;
+	cout << character4 << endl;
+
+	cout << endl << "-----------------character 1 UNEQUIP TEST :---------------" << endl << endl;
+	character1.unequip(0);
+	character1.unequip(1);
+	character1.unequip(2);
+	character1.unequip(3);
+	character1.unequip(4);
+	character1.unequip(-1);
+
+	cout << endl << "-----------------character 2 UNEQUIP TEST :---------------" << endl << endl;
+	character2.unequip(0);
+	character2.unequip(1);
+	character2.unequip(2);
+	character2.unequip(3);
+	character2.unequip(4);
+	character2.unequip(-1);
+
+	cout << endl << "-----------------character 3 UNEQUIP TEST :---------------" << endl << endl;
+	character3.unequip(0);
+	character3.unequip(1);
+	character3.unequip(2);
+	character3.unequip(3);
+	character3.unequip(4);
+	character3.unequip(-1);
+
+	cout << endl << "-----------------character 4 UNEQUIP TEST :---------------" << endl << endl;
+	character4.unequip(0);
+	character4.unequip(1);
+	character4.unequip(2);
+	character4.unequip(3);
+	character4.unequip(4);
+	character4.unequip(-1);
+
+	cout << endl << "-----------------character 1 ADDITIONAL UNEQUIP TEST :---------------" << endl << endl;
+	tmp = src->createMateria("ice");
+	character1.equip(tmp);
+	tmp = src->createMateria("ice");
+	character1.equip(tmp);
+	character1.unequip(1);
+	character1.unequip(2);
+	character1.unequip(3);
+	character1.unequip(4);
+	character1.unequip(-1);
+
+	cout << endl << "-----------------CLEANUP MAIN (MATERIA SOURCE AND BASE MATERIA) :---------------" << endl << endl;
 	delete src;
 	delete ice;
-	delete cure;
-	/* me.equip(&salut);
-	me.equip(&salut2);
-	me.use(0, usane);
-	cout << "-----------heuuuu--------------" << endl;
-	me.use(2, usane);
-	cout << "-----------heuuuu--------------" << endl;
-	me.use(1, usane);
-	me.unequip(1);
-	me.equip(&coucou);
-	me.use(1, usane); */
+	delete cure; */
 
 	cout << "-----------------DESTRUCTION CALL---------------" << endl;
 	return (0);
